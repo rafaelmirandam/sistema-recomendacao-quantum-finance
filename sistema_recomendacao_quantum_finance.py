@@ -65,6 +65,158 @@ clientes_produtos = {
         "Seguro": 1,
         "Emprestimo": 1,
         "Financiamento": 0
+    },
+    "Gabriel": {
+        "CC": 1,
+        "CartaoCredito": 0,
+        "Investimento": 0,
+        "Seguro": 0,
+        "Emprestimo": 0,
+        "Financiamento": 1     # Cliente novo, só possui CC e Financiamento
+    },
+    "Helena": {
+        "CC": 1,
+        "CartaoCredito": 1,
+        "Investimento": 1,
+        "Seguro": 1,
+        "Emprestimo": 1,
+        "Financiamento": 1     # Cliente premium com todos os produtos
+    },
+    "Igor": {
+        "CC": 1,
+        "CartaoCredito": 0,
+        "Investimento": 1,
+        "Seguro": 0,
+        "Emprestimo": 0,
+        "Financiamento": 0     # Perfil conservador, similar à Ana
+    },
+    "Julia": {
+        "CC": 1,
+        "CartaoCredito": 1,
+        "Investimento": 0,
+        "Seguro": 1,
+        "Emprestimo": 0,
+        "Financiamento": 0     # Perfil proteção sem investimentos
+    },
+    "Kevin": {
+        "CC": 1,
+        "CartaoCredito": 1,
+        "Investimento": 0,
+        "Seguro": 0,
+        "Emprestimo": 1,
+        "Financiamento": 1     # Perfil endividado
+    },
+    "Laura": {
+        "CC": 1,
+        "CartaoCredito": 0,
+        "Investimento": 1,
+        "Seguro": 1,
+        "Emprestimo": 0,
+        "Financiamento": 0     # Perfil investidor conservador
+    },
+    "Miguel": {
+        "CC": 1,
+        "CartaoCredito": 1,
+        "Investimento": 1,
+        "Seguro": 0,
+        "Emprestimo": 0,
+        "Financiamento": 0     # Perfil similar ao Eduardo
+    },
+    "Natalia": {
+        "CC": 1,
+        "CartaoCredito": 0,
+        "Investimento": 0,
+        "Seguro": 1,
+        "Emprestimo": 0,
+        "Financiamento": 1     # Perfil cauteloso
+    },
+    "Otavio": {
+        "CC": 1,
+        "CartaoCredito": 1,
+        "Investimento": 1,
+        "Seguro": 1,
+        "Emprestimo": 0,
+        "Financiamento": 0     # Perfil similar ao Bruno
+    },
+    "Patricia": {
+        "CC": 1,
+        "CartaoCredito": 0,
+        "Investimento": 0,
+        "Seguro": 0,
+        "Emprestimo": 1,
+        "Financiamento": 0     # Cliente básico com empréstimo
+    },
+    "Quincy": {
+        "CC": 1,
+        "CartaoCredito": 1,
+        "Investimento": 0,
+        "Seguro": 0,
+        "Emprestimo": 0,
+        "Financiamento": 1     # Perfil jovem urbano
+    },
+    "Rafael": {
+        "CC": 1,
+        "CartaoCredito": 1,
+        "Investimento": 1,
+        "Seguro": 0,
+        "Emprestimo": 1,
+        "Financiamento": 0     # Perfil misto
+    },
+    "Sabrina": {
+        "CC": 1,
+        "CartaoCredito": 0,
+        "Investimento": 1,
+        "Seguro": 1,
+        "Emprestimo": 0,
+        "Financiamento": 1     # Perfil similar à Diana
+    },
+    "Tiago": {
+        "CC": 1,
+        "CartaoCredito": 0,
+        "Investimento": 0,
+        "Seguro": 0,
+        "Emprestimo": 0,
+        "Financiamento": 0     # Cliente minimalista - só CC
+    },
+    "Ursula": {
+        "CC": 1,
+        "CartaoCredito": 1,
+        "Investimento": 0,
+        "Seguro": 1,
+        "Emprestimo": 1,
+        "Financiamento": 0     # Perfil similar à Fernanda
+    },
+    "Vitor": {
+        "CC": 1,
+        "CartaoCredito": 0,
+        "Investimento": 1,
+        "Seguro": 0,
+        "Emprestimo": 0,
+        "Financiamento": 1     # Perfil investidor com financiamento
+    },
+    "Wanda": {
+        "CC": 1,
+        "CartaoCredito": 1,
+        "Investimento": 1,
+        "Seguro": 1,
+        "Emprestimo": 0,
+        "Financiamento": 1     # Cliente quase premium
+    },
+    "Xavier": {
+        "CC": 1,
+        "CartaoCredito": 0,
+        "Investimento": 0,
+        "Seguro": 1,
+        "Emprestimo": 1,
+        "Financiamento": 0     # Perfil proteção com empréstimo
+    },
+    "João": {
+        "CC": 1,
+        "CartaoCredito": 1,
+        "Investimento": 0,
+        "Seguro": 0,
+        "Emprestimo": 0,
+        "Financiamento": 0     # Perfil jovem urbano - CC + Cartão
     }
 }
 
@@ -325,17 +477,49 @@ if __name__ == "__main__":
     resultado_carlos = recomendar_produto("Carlos", clientes_produtos)
     exibir_recomendacao_detalhada(resultado_carlos)
     
-    # Exemplo 3: Tentativa de recomendação para usuário inexistente
+    # Exemplo 3: Recomendação para cliente minimalista (Tiago)
     print("\n" + "="*80)
-    print("EXEMPLO 3: TRATAMENTO DE ERRO - USUÁRIO INEXISTENTE")
+    print("EXEMPLO 3: RECOMENDAÇÃO PARA CLIENTE MINIMALISTA (TIAGO)")
     print("="*80)
     
-    resultado_erro = recomendar_produto("João", clientes_produtos)
+    resultado_tiago = recomendar_produto("Tiago", clientes_produtos)
+    exibir_recomendacao_detalhada(resultado_tiago)
+    
+    # Exemplo 4: Recomendação para cliente premium (Helena)
+    print("\n" + "="*80)
+    print("EXEMPLO 4: CLIENTE PREMIUM - HELENA (JÁ POSSUI TODOS PRODUTOS)")
+    print("="*80)
+    
+    resultado_helena = recomendar_produto("Helena", clientes_produtos)
+    exibir_recomendacao_detalhada(resultado_helena)
+    
+    # Exemplo 5: Recomendação para cliente com perfil específico (Gabriel)
+    print("\n" + "="*80)
+    print("EXEMPLO 5: RECOMENDAÇÃO PARA GABRIEL (PERFIL JOVEM)")
+    print("="*80)
+    
+    resultado_gabriel = recomendar_produto("Gabriel", clientes_produtos)
+    exibir_recomendacao_detalhada(resultado_gabriel)
+    
+    # Exemplo 6: Recomendação para João (investidor iniciante)
+    print("\n" + "="*80)
+    print("EXEMPLO 6: RECOMENDAÇÃO PARA JOÃO (INVESTIDOR INICIANTE)")
+    print("="*80)
+    
+    resultado_joao = recomendar_produto("João", clientes_produtos)
+    exibir_recomendacao_detalhada(resultado_joao)
+    
+    # Exemplo 7: Tratamento de erro - usuário inexistente
+    print("\n" + "="*80)
+    print("EXEMPLO 7: TRATAMENTO DE ERRO - USUÁRIO INEXISTENTE")
+    print("="*80)
+    
+    resultado_erro = recomendar_produto("Maria", clientes_produtos)
     exibir_recomendacao_detalhada(resultado_erro)
     
-    # Exemplo 4: Análise geral da base
+    # Exemplo 8: Análise geral da base expandida
     print("\n" + "="*80)
-    print("EXEMPLO 4: ANÁLISE GERAL DA BASE DE CLIENTES")
+    print("EXEMPLO 8: ANÁLISE GERAL DA BASE DE CLIENTES EXPANDIDA")
     print("="*80)
     
     print("\n📊 RESUMO DA BASE DE CLIENTES:")
@@ -358,8 +542,50 @@ if __name__ == "__main__":
     produto_mais_popular = max(produtos_count.items(), key=lambda x: x[1])
     print(f"   Produto mais popular: {produto_mais_popular[0]} ({produto_mais_popular[1]} clientes)")
     
+    # Estatísticas detalhadas por produto
+    print(f"\n📊 DISTRIBUIÇÃO POR PRODUTO:")
+    for produto, count in sorted(produtos_count.items(), key=lambda x: x[1], reverse=True):
+        percentual = (count / len(clientes_produtos)) * 100
+        nome_produto = produtos_info.get(produto, {}).get('nome', produto)
+        print(f"   {nome_produto}: {count} clientes ({percentual:.1f}%)")
+    
+    # Análise de perfis de cliente
+    print(f"\n🎯 ANÁLISE DE PERFIS:")
+    perfis = {
+        "Minimalista (1-2 produtos)": 0,
+        "Moderado (3-4 produtos)": 0,
+        "Premium (5-6 produtos)": 0
+    }
+    
+    for cliente, produtos in clientes_produtos.items():
+        total_produtos = sum(produtos.values())
+        if total_produtos <= 2:
+            perfis["Minimalista (1-2 produtos)"] += 1
+        elif total_produtos <= 4:
+            perfis["Moderado (3-4 produtos)"] += 1
+        else:
+            perfis["Premium (5-6 produtos)"] += 1
+    
+    for perfil, count in perfis.items():
+        percentual = (count / len(clientes_produtos)) * 100
+        print(f"   {perfil}: {count} clientes ({percentual:.1f}%)")
+    
+    # Oportunidades de cross-sell
+    print(f"\n💡 OPORTUNIDADES DE CROSS-SELL:")
+    produtos_menos_penetrados = sorted(produtos_count.items(), key=lambda x: x[1])[:3]
+    for produto, count in produtos_menos_penetrados:
+        potencial = len(clientes_produtos) - count
+        nome_produto = produtos_info.get(produto, {}).get('nome', produto)
+        print(f"   {nome_produto}: {potencial} clientes potenciais")
+    
     print(f"\n✅ DEMONSTRAÇÃO CONCLUÍDA!")
-    print("Este sistema demonstra os conceitos básicos de filtro colaborativo.")
+    print("Este sistema demonstra os conceitos básicos de filtro colaborativo com base expandida.")
+    print("A base agora possui 25 clientes com perfis diversos, permitindo:")
+    print("• Melhor demonstração de similaridades entre usuários")
+    print("• Casos variados de recomendação (minimalista, premium, específicos)")
+    print("• Análise mais robusta de padrões de consumo")
+    print("• Identificação de oportunidades de cross-sell")
+    print("")
     print("Em um ambiente de produção, seria necessário implementar:")
     print("• Algoritmos mais sofisticados (matrix factorization, deep learning)")
     print("• Tratamento de dados em larga escala")
@@ -367,3 +593,30 @@ if __name__ == "__main__":
     print("• Integração com sistemas de produção")
     print("• Tratamento de cold start problem")
     print("• Explicabilidade das recomendações")
+
+def consultar_recomendacao_individual(nome_cliente: str):
+    """
+    Função para consultar recomendação individual de um cliente específico.
+    Útil para testes pontuais e demonstrações interativas.
+    
+    Args:
+        nome_cliente: Nome do cliente para consultar recomendação
+    """
+    print(f"\n{'='*80}")
+    print(f"CONSULTA INDIVIDUAL - SISTEMA QUANTUM FINANCE")
+    print(f"{'='*80}")
+    
+    if nome_cliente not in clientes_produtos:
+        print(f"\n❌ Cliente '{nome_cliente}' não encontrado na base.")
+        print("📋 Clientes disponíveis:")
+        clientes_disponiveis = list(clientes_produtos.keys())
+        for i, cliente in enumerate(clientes_disponiveis, 1):
+            print(f"   {i:2d}. {cliente}")
+        return
+    
+    resultado = recomendar_produto(nome_cliente, clientes_produtos)
+    exibir_recomendacao_detalhada(resultado)
+    
+# Exemplo de uso da função de consulta individual:
+# Para testar um cliente específico, descomente a linha abaixo:
+# consultar_recomendacao_individual("João")

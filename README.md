@@ -40,7 +40,7 @@ O sistema proposto inclui:
 ### Tecnologias Utilizadas
 - **Python 3.11+**
 - **Algoritmo:** Filtro Colaborativo com Distância Euclidiana
-- **Dataset:** Simulado com 6 clientes e 6 produtos financeiros
+- **Dataset:** Simulado com 25 clientes e 6 produtos financeiros
 
 ### Como Executar
 
@@ -52,20 +52,31 @@ O sistema proposto inclui:
 
 ### Funcionalidades Implementadas
 
-✅ **Dataset Simulado** - Base de clientes com produtos financeiros  
+✅ **Dataset Simulado Expandido** - Base com 25 clientes e perfis diversos  
 ✅ **Cálculo de Similaridade** - Distância Euclidiana entre usuários  
 ✅ **Identificação de Similares** - Ranking de usuários similares  
 ✅ **Geração de Recomendações** - Baseada em filtro colaborativo  
 ✅ **Interface Amigável** - Explicações detalhadas das recomendações  
 ✅ **Tratamento de Erros** - Validações e casos extremos  
-✅ **Estatísticas** - Análise da base de clientes  
+✅ **Estatísticas Avançadas** - Análise por produto e perfil de cliente  
+✅ **Consulta Individual** - Função para teste de clientes específicos  
+✅ **Análise de Cross-sell** - Identificação de oportunidades comerciais  
 
 ## 📊 Exemplo de Execução
 
 O sistema demonstra recomendações para diferentes perfis:
 
-- **Ana** (CC + Investimento) → Recomenda **Cartão de Crédito**
-- **Carlos** (CC + Cartão + Empréstimo) → Recomenda **Seguro**
+- **Tiago** (Minimalista - só CC) → Recomenda **Investimentos**
+- **Carlos** (CC + Cartão + Empréstimo) → Recomenda **Seguro**  
+- **Gabriel** (Jovem - CC + Financiamento) → Recomenda **Seguro**
+- **João** (CC + Cartão) → Recomenda **Empréstimo**
+- **Helena** (Premium - todos produtos) → Sem recomendações disponíveis
+
+### 📈 Estatísticas da Base Expandida
+- **25 clientes** com perfis diversos
+- **Minimalista** (1-2 produtos): 24% dos clientes
+- **Moderado** (3-4 produtos): 68% dos clientes  
+- **Premium** (5-6 produtos): 8% dos clientes
 
 ## 🔍 Protótipo de Interface
 
@@ -78,10 +89,11 @@ O protótipo descreve uma interface mobile com:
 ## ⚠️ Limitações da PoC
 
 Esta é uma **demonstração educacional** com limitações intencionais:
-- Base de dados pequena e simplificada
+- Base de dados simulada (25 clientes)
 - Algoritmo básico de filtro colaborativo
 - Ausência de fatores temporais/contextuais
 - Sem métricas de avaliação de qualidade
+- Recomendações baseadas apenas no primeiro usuário similar
 
 ## 🚀 Evoluções para Produção
 
@@ -100,6 +112,10 @@ Para implementação real seria necessário:
 - 😊 Melhoria na satisfação do cliente
 - 📉 Redução de churn
 - 🎯 Otimização de campanhas de marketing
+- 💡 **Oportunidades identificadas:**
+  - Empréstimo: 17 clientes potenciais (68% da base)
+  - Financiamento: 16 clientes potenciais (64% da base)
+  - Seguro: 13 clientes potenciais (52% da base)
 
 ## 📚 Documentação Completa
 
