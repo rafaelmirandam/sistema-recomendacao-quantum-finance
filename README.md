@@ -1,18 +1,15 @@
 # Sistema de Recomendação Quantum Finance
 
-> **Sistema de Recomendação para Produtos Fintech**  
-> **Autores:** Rafael de Miranda / Wilson Roberto de Melo  
-> **Data:** Setembro 2025
 
-## 📋 Sobre o Projeto
+##  Sobre o Projeto
 
 Sistema completo de recomendação desenvolvido para a fintech **Quantum Finance**, focado em produtos financeiros personalizados. O projeto utiliza dados do Open Finance para oferecer recomendações inteligentes baseadas em perfis similares de clientes.
 
-## 🏢 Quantum Finance - A Fintech
+##  Quantum Finance - A Fintech
 
 A Quantum Finance é uma fintech que utiliza dados do Open Finance para oferecer recomendações personalizadas de produtos financeiros aos seus clientes, aumentando o engajamento e realizando vendas cruzadas (cross-sell).
 
-## 📁 Estrutura do Projeto
+##  Estrutura do Projeto
 
 ```
 trabalho/
@@ -21,11 +18,11 @@ trabalho/
 └── README.md                       # Documentação do projeto
 ```
 
-## 🎯 Objetivo
+##  Objetivo
 
 Recomendar o produto financeiro mais adequado (cartão de crédito, investimento, seguro, empréstimo, financiamento) para novos clientes com base no perfil de usuários similares, utilizando dados do Open Finance para enriquecer o perfil inicial.
 
-## 🏗️ Arquitetura do Sistema
+##  Arquitetura do Sistema
 
 A arquitetura do sistema inclui:
 
@@ -34,7 +31,7 @@ A arquitetura do sistema inclui:
 - **Motor de Recomendação:** Filtro Colaborativo + Modelos Híbridos
 - **Exposição via APIs:** REST API para diferentes canais
 
-## 🖥️ Implementação Técnica
+##  Implementação Técnica
 
 ### Tecnologias Utilizadas
 - **Python 3.11+**
@@ -51,17 +48,17 @@ A arquitetura do sistema inclui:
 
 ### Funcionalidades Implementadas
 
-✅ **Base de Dados Expandida** - 25 clientes com perfis diversos  
-✅ **Análise de Similaridade** - Cálculo de distância euclidiana entre usuários  
-✅ **Ranking de Similares** - Identificação dos usuários mais próximos  
-✅ **Recomendações Personalizadas** - Baseadas em filtro colaborativo  
-✅ **Interface Detalhada** - Explicações claras das recomendações  
-✅ **Validação de Dados** - Tratamento de erros e casos especiais  
-✅ **Análise Estatística** - Métricas por produto e perfil de cliente  
-✅ **Consulta Individual** - Busca específica por cliente  
-✅ **Análise de Cross-sell** - Identificação de oportunidades comerciais  
+ **Base de Dados Expandida** - 25 clientes com perfis diversos  
+ **Análise de Similaridade** - Cálculo de distância euclidiana entre usuários  
+ **Ranking de Similares** - Identificação dos usuários mais próximos  
+ **Recomendações Personalizadas** - Baseadas em filtro colaborativo  
+ **Interface Detalhada** - Explicações claras das recomendações  
+ **Validação de Dados** - Tratamento de erros e casos especiais  
+ **Análise Estatística** - Métricas por produto e perfil de cliente  
+ **Consulta Individual** - Busca específica por cliente  
+ **Análise de Cross-sell** - Identificação de oportunidades comerciais  
 
-## 📊 Exemplos de Execução
+##  Exemplos de Execução
 
 O sistema gera recomendações para diferentes perfis de cliente:
 
@@ -71,13 +68,13 @@ O sistema gera recomendações para diferentes perfis de cliente:
 - **João** (CC + Cartão) → Recomenda **Empréstimo**
 - **Helena** (Perfil premium - todos produtos) → Base completa, sem recomendações adicionais
 
-### 📈 Estatísticas da Base de Clientes
+###  Estatísticas da Base de Clientes
 - **25 clientes** com perfis diversificados
 - **Minimalista** (1-2 produtos): 24% dos clientes
 - **Moderado** (3-4 produtos): 68% dos clientes  
 - **Premium** (5-6 produtos): 8% dos clientes
 
-## 🔍 Protótipo de Interface
+##  Protótipo de Interface
 
 O protótipo descreve uma interface mobile com:
 - Card destacado "Produtos que combinam com você"
@@ -85,7 +82,7 @@ O protótipo descreve uma interface mobile com:
 - Indicadores de compatibilidade e personalização
 - Feedback do usuário para melhoria contínua
 
-## ⚠️ Limitações Atuais
+##  Limitações Atuais
 
 O sistema possui algumas limitações técnicas:
 - Base de dados com escopo reduzido (25 clientes)
@@ -94,7 +91,7 @@ O sistema possui algumas limitações técnicas:
 - Ausência de métricas de performance quantitativas
 - Recomendações limitadas ao primeiro usuário similar identificado
 
-## 🚀 Roadmap de Melhorias
+##  Roadmap de Melhorias
 
 Para implementação em ambiente corporativo seria necessário:
 - **Escalabilidade:** Integração com Big Data (Spark, Hadoop)
@@ -105,18 +102,18 @@ Para implementação em ambiente corporativo seria necessário:
 - **Explicabilidade Avançada:** Justificativas mais detalhadas
 - **Compliance:** Conformidade total com LGPD e regulamentações financeiras
 
-## 📈 Impacto Esperado
+##  Impacto Esperado
 
-- ↗️ **15-25%** aumento na conversão de produtos
-- 😊 Melhoria na satisfação do cliente
-- 📉 Redução de churn
-- 🎯 Otimização de campanhas de marketing
-- 💡 **Oportunidades identificadas:**
+-  **15-25%** aumento na conversão de produtos
+-  Melhoria na satisfação do cliente
+-  Redução de churn
+-  Otimização de campanhas de marketing
+-  **Oportunidades identificadas:**
   - Empréstimo: 17 clientes potenciais (68% da base)
   - Financiamento: 16 clientes potenciais (64% da base)
   - Seguro: 13 clientes potenciais (52% da base)
 
-## 📚 Documentação Completa
+##  Documentação Completa
 
 Para detalhes completos sobre contextualização, arquitetura, protótipo e implementação, consulte o arquivo `documentacao_tecnica.md`.
 

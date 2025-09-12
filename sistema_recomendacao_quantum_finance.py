@@ -1,5 +1,7 @@
 """
 Sistema de Recomendação Quantum Finance
+Disciplina: Sistemas de Recomendação - FIAP
+Professor: José Luiz Maturana Pagnossim
 Autores: Rafael de Miranda / Wilson Roberto de Melo
 Data: Setembro 2025
 
@@ -369,7 +371,7 @@ def recomendar_produto(usuario_alvo: str, base_clientes: Dict[str, Dict[str, int
     usuario_mais_similar, distancia = usuarios_similares[0]
     perfil_similar = base_clientes[usuario_mais_similar]
     
-    print(f"\n👥 USUÁRIO MAIS SIMILAR: {usuario_mais_similar}")
+    print(f"\nUSUÁRIO MAIS SIMILAR: {usuario_mais_similar}")
     produtos_similar = [produto for produto, tem in perfil_similar.items() if tem == 1]
     print(f"   Produtos que {usuario_mais_similar} possui: {', '.join(produtos_similar)}")
     
@@ -393,7 +395,7 @@ def recomendar_produto(usuario_alvo: str, base_clientes: Dict[str, Dict[str, int
     produto_recomendado = produtos_para_recomendar[0]
     info_produto = produtos_info.get(produto_recomendado, {})
     
-    print(f"\n🎯 RECOMENDAÇÃO GERADA:")
+    print(f"\nRECOMENDAÇÃO GERADA:")
     print(f"   Produto: {info_produto.get('nome', produto_recomendado)}")
     print(f"   Motivo: Usuários similares a você também contrataram este produto")
     print(f"   Baseado em: Perfil de {usuario_mais_similar}")
@@ -423,19 +425,19 @@ def exibir_recomendacao_detalhada(resultado_recomendacao: Dict):
         return
     
     print(f"\n{'='*60}")
-    print(f"✨ RECOMENDAÇÃO PERSONALIZADA QUANTUM FINANCE")
+    print(f"RECOMENDAÇÃO PERSONALIZADA QUANTUM FINANCE")
     print(f"{'='*60}")
     
-    print(f"\n🏆 PRODUTO RECOMENDADO:")
+    print(f"\nPRODUTO RECOMENDADO:")
     print(f"   {resultado_recomendacao['nome_produto']}")
     print(f"   {resultado_recomendacao['descricao']}")
     
     if resultado_recomendacao['beneficios']:
-        print(f"\n💎 PRINCIPAIS BENEFÍCIOS:")
+        print(f"\nPRINCIPAIS BENEFÍCIOS:")
         for beneficio in resultado_recomendacao['beneficios']:
             print(f"   • {beneficio}")
     
-    print(f"\n🧠 POR QUE ESTA RECOMENDAÇÃO?")
+    print(f"\nPOR QUE ESTA RECOMENDAÇÃO?")
     print(f"   {resultado_recomendacao['motivo']}")
     
     similaridade_percentual = max(0, (1 - resultado_recomendacao['distancia']/10) * 100)
@@ -443,7 +445,7 @@ def exibir_recomendacao_detalhada(resultado_recomendacao: Dict):
     
     if len(resultado_recomendacao['todos_produtos_similares']) > 1:
         outros_produtos = resultado_recomendacao['todos_produtos_similares'][1:]
-        print(f"\n📋 OUTROS PRODUTOS QUE PODEM INTERESSAR:")
+        print(f"\n OUTROS PRODUTOS QUE PODEM INTERESSAR:")
         for produto in outros_produtos:
             nome_produto = produtos_info.get(produto, {}).get('nome', produto)
             print(f"   • {nome_produto}")
@@ -519,13 +521,13 @@ if __name__ == "__main__":
     print("EXEMPLO 8: ANÁLISE GERAL DA BASE DE CLIENTES EXPANDIDA")
     print("="*80)
     
-    print("\n📊 RESUMO DA BASE DE CLIENTES:")
+    print("\nRESUMO DA BASE DE CLIENTES:")
     for cliente, produtos in clientes_produtos.items():
         total_produtos = sum(produtos.values())
         produtos_lista = [prod for prod, tem in produtos.items() if tem == 1]
         print(f"   {cliente}: {total_produtos} produtos ({', '.join(produtos_lista)})")
     
-    print(f"\n📈 ESTATÍSTICAS:")
+    print(f"\nESTATÍSTICAS:")
     print(f"   Total de clientes: {len(clientes_produtos)}")
     print(f"   Total de produtos disponíveis: {len(list(clientes_produtos.values())[0])}")
     
@@ -540,14 +542,14 @@ if __name__ == "__main__":
     print(f"   Produto mais popular: {produto_mais_popular[0]} ({produto_mais_popular[1]} clientes)")
     
     # Estatísticas detalhadas por produto
-    print(f"\n📊 DISTRIBUIÇÃO POR PRODUTO:")
+    print(f"\nDISTRIBUIÇÃO POR PRODUTO:")
     for produto, count in sorted(produtos_count.items(), key=lambda x: x[1], reverse=True):
         percentual = (count / len(clientes_produtos)) * 100
         nome_produto = produtos_info.get(produto, {}).get('nome', produto)
         print(f"   {nome_produto}: {count} clientes ({percentual:.1f}%)")
     
     # Análise de perfis de cliente
-    print(f"\n🎯 ANÁLISE DE PERFIS:")
+    print(f"\nANÁLISE DE PERFIS:")
     perfis = {
         "Minimalista (1-2 produtos)": 0,
         "Moderado (3-4 produtos)": 0,
@@ -568,14 +570,14 @@ if __name__ == "__main__":
         print(f"   {perfil}: {count} clientes ({percentual:.1f}%)")
     
     # Oportunidades de cross-sell
-    print(f"\n💡 OPORTUNIDADES DE CROSS-SELL:")
+    print(f"\nOPORTUNIDADES DE CROSS-SELL:")
     produtos_menos_penetrados = sorted(produtos_count.items(), key=lambda x: x[1])[:3]
     for produto, count in produtos_menos_penetrados:
         potencial = len(clientes_produtos) - count
         nome_produto = produtos_info.get(produto, {}).get('nome', produto)
         print(f"   {nome_produto}: {potencial} clientes potenciais")
     
-    print(f"\n✅ EXECUÇÃO CONCLUÍDA!")
+    print(f"\nEXECUÇÃO CONCLUÍDA!")
     print("Sistema analisou base de 25 clientes com sucesso.")
     print("A base diversificada permite:")
     print("• Identificação precisa de similaridades entre usuários")
@@ -604,7 +606,7 @@ def consultar_recomendacao_individual(nome_cliente: str):
     print(f"{'='*80}")
     
     if nome_cliente not in clientes_produtos:
-        print(f"\n❌ Cliente '{nome_cliente}' não encontrado na base.")
+        print(f"\nCliente '{nome_cliente}' não encontrado na base.")
         print("📋 Clientes disponíveis:")
         clientes_disponiveis = list(clientes_produtos.keys())
         for i, cliente in enumerate(clientes_disponiveis, 1):
