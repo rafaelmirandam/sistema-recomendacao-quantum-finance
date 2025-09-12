@@ -3,7 +3,7 @@
 
 **Disciplina:** Sistemas de Recomendação  
 **Professor:** José Luiz Maturana Pagnossim  
-**Aluno:** Rafael de Miranda / Wilson Roberto de Melo  
+**Autores:** Rafael de Miranda / Wilson Roberto de Melo  
 **Data:** Setembro 2025
 
 ---
@@ -26,7 +26,7 @@ Recomendar o produto financeiro mais adequado (cartão de crédito, conta invest
 
 ### Arquitetura do Sistema de Recomendação Quantum Finance
 
-A arquitetura proposta segue uma abordagem de microserviços, garantindo escalabilidade e flexibilidade para futuras expansões:
+A arquitetura segue uma abordagem de microserviços, garantindo escalabilidade e flexibilidade para futuras expansões:
 
 #### 2.1 Fontes de Dados
 
@@ -167,18 +167,18 @@ A arquitetura proposta segue uma abordagem de microserviços, garantindo escalab
 
 ---
 
-## 4. Código-Fonte (Prova de Conceito - PoC)
+## 4. Implementação Técnica
 
-O código-fonte completo da prova de conceito foi implementado no arquivo `sistema_recomendacao_quantum_finance.py` e inclui os seguintes componentes:
+A implementação completa do sistema foi desenvolvida no arquivo `sistema_recomendacao_quantum_finance.py` e inclui os seguintes componentes:
 
-### 4.1 Dataset Simulado Expandido
+### 4.1 Base de Dados Expandida
 ```python
-# Base de dados simulada com 25 clientes e 6 produtos financeiros
+# Base de dados com 25 clientes e 6 produtos financeiros
 clientes_produtos = {
     "Ana": {"CC": 1, "CartaoCredito": 0, "Investimento": 1, "Seguro": 0, "Emprestimo": 0, "Financiamento": 0},
     "Bruno": {"CC": 1, "CartaoCredito": 1, "Investimento": 1, "Seguro": 1, "Emprestimo": 0, "Financiamento": 0},
     "João": {"CC": 1, "CartaoCredito": 1, "Investimento": 0, "Seguro": 0, "Emprestimo": 0, "Financiamento": 0},
-    # ... mais 22 clientes com perfis diversos
+    # ... mais 22 clientes com perfis diversificados
 }
 ```
 
@@ -186,34 +186,34 @@ clientes_produtos = {
 - **Minimalista:** Clientes com 1-2 produtos (Tiago, Patricia)
 - **Moderado:** Clientes com 3-4 produtos (maioria da base)
 - **Premium:** Clientes com 5-6 produtos (Helena, Wanda)
-- **Específicos:** Investidor conservador, jovem urbano, endividado, etc.
+- **Segmentados:** Investidor conservador, jovem urbano, pessoa física, etc.
 
 ### 4.2 Algoritmo de Filtro Colaborativo
 - **Cálculo de Similaridade:** Implementação da distância euclidiana entre usuários
 - **Identificação de Usuários Similares:** Função que ranqueia todos os usuários por similaridade
 - **Geração de Recomendação:** Lógica que identifica produtos do usuário mais similar que o usuário alvo não possui
 
-### 4.3 Funcionalidades Implementadas
-- ✅ **Dataset Expandido:** 25 clientes com perfis diversos
+### 4.3 Funcionalidades Desenvolvidas
+- ✅ **Base Expandida:** 25 clientes com perfis diversificados
 - ✅ **Cálculo de Similaridade:** Distância euclidiana entre usuários
-- ✅ **Identificação de Similares:** Ranking dos 3 usuários mais similares
+- ✅ **Identificação de Similares:** Ranking dos 3 usuários mais próximos
 - ✅ **Geração de Recomendações:** Baseada em filtro colaborativo
-- ✅ **Interface Amigável:** Explicações detalhadas das recomendações
-- ✅ **Tratamento de Erros:** Validações e casos extremos
+- ✅ **Interface Detalhada:** Explicações claras das recomendações
+- ✅ **Tratamento de Erros:** Validações e casos especiais
 - ✅ **Estatísticas Avançadas:** Análise por produto e perfil
-- ✅ **Consulta Individual:** Função para teste de clientes específicos
+- ✅ **Consulta Individual:** Função para análise de clientes específicos
 - ✅ **Análise Cross-sell:** Identificação de oportunidades comerciais
 
-### 4.4 Exemplos de Execução Expandidos
-O sistema demonstra diversos cenários:
+### 4.4 Casos de Uso Analisados
+O sistema processa diversos cenários:
 - **Tiago (Minimalista):** Recebe recomendação de Investimentos
 - **João (Jovem Urbano):** Recebe recomendação de Empréstimo  
-- **Helena (Premium):** Não há produtos para recomendar
-- **Gabriel (Específico):** Recebe recomendação de Seguro
-- **Carlos (Moderado):** Recebe recomendação baseada em Fernanda
+- **Helena (Premium):** Base completa, sem produtos adicionais para recomendar
+- **Gabriel (Segmentado):** Recebe recomendação de Seguro
+- **Carlos (Moderado):** Recebe recomendação baseada em similaridade com Fernanda
 
-### 4.5 Estatísticas da Base Expandida
-- **25 clientes** com perfis diversos
+### 4.5 Métricas da Base de Clientes
+- **25 clientes** com perfis diversificados
 - **6 produtos** financeiros disponíveis
 - **Distribuição de Perfis:**
   - Minimalista (1-2 produtos): 24% dos clientes
@@ -224,26 +224,26 @@ O sistema demonstra diversos cenários:
 
 ## 5. Considerações Finais
 
-### 5.1 Limitações da PoC
-Esta prova de conceito possui limitações intencionais para fins educacionais:
-- Base de dados simulada (25 clientes)
+### 5.1 Limitações Técnicas Atuais
+O sistema atual possui algumas limitações:
+- Base de dados com escopo reduzido (25 clientes)
 - Algoritmo básico de filtro colaborativo
 - Não considera fatores temporais ou contextuais
-- Ausência de métricas de avaliação de qualidade
-- Recomendações baseadas apenas no primeiro usuário similar
+- Ausência de métricas de performance quantitativas
+- Recomendações limitadas ao primeiro usuário similar identificado
 
-### 5.2 Evoluções para Produção
-Para implementar em produção, seria necessário:
+### 5.2 Roadmap de Evolução
+Para implementação em ambiente corporativo seria necessário:
 - **Escalabilidade:** Uso de ferramentas big data (Spark, Hadoop)
-- **Algoritmos Sofisticados:** Matrix factorization, deep learning, modelos híbridos
-- **Real-time Processing:** Recomendações em tempo real
-- **A/B Testing:** Validação contínua da qualidade das recomendações
-- **Cold Start:** Tratamento de novos usuários sem histórico
-- **Explicabilidade:** Melhor justificativa das recomendações
-- **Privacidade:** Conformidade com LGPD e regulamentações do Open Finance
+- **Algoritmos Avançados:** Matrix factorization, deep learning, modelos híbridos
+- **Processamento Real-time:** Recomendações instantâneas
+- **Testes A/B:** Validação contínua da qualidade das recomendações
+- **Cold Start Solution:** Tratamento especializado para novos usuários sem histórico
+- **Explicabilidade Avançada:** Justificativas mais detalhadas das recomendações
+- **Compliance:** Conformidade com LGPD e regulamentações do Open Finance
 
 ### 5.3 Impacto Esperado
-A implementação deste sistema na Quantum Finance poderia resultar em:
+A implementação na Quantum Finance resultaria em:
 - Aumento de 15-25% na conversão de novos produtos
 - Melhoria na satisfação do cliente através de ofertas mais relevantes
 - Redução de churn pela maior personalização da experiência
@@ -255,13 +255,13 @@ Com base na análise da base expandida, foram identificadas as seguintes oportun
 - **Financiamento Quantum Finance:** 16 clientes potenciais (64% da base)
 - **Seguro Quantum Finance Vida:** 13 clientes potenciais (52% da base)
 
-### 5.5 Melhorias Implementadas na PoC
+### 5.5 Melhorias Implementadas no Sistema
 Durante o desenvolvimento, foram implementadas as seguintes melhorias:
-- **Base Expandida:** De 6 para 25 clientes com perfis diversos
+- **Base Expandida:** Crescimento de 6 para 25 clientes com perfis diversificados
 - **Análises Estatísticas:** Distribuição por produto e perfil de cliente
-- **Consulta Individual:** Função para teste de clientes específicos
+- **Consulta Individual:** Função para análise de clientes específicos
 - **Casos de Uso Variados:** Minimalista, premium, jovem, conservador
 - **Identificação de Oportunidades:** Análise automática de cross-sell
 
 ### 5.6 Conclusão
-O sistema de recomendação proposto para a Quantum Finance representa uma aplicação prática dos conceitos de filtro colaborativo no contexto do Open Finance brasileiro. A base expandida de 25 clientes com perfis diversos demonstra a eficácia do algoritmo em diferentes cenários, desde clientes minimalistas até premium. A integração de dados internos e externos possibilita recomendações mais assertivas, contribuindo para o crescimento sustentável da fintech através de uma abordagem centrada no cliente e baseada em evidências comportamentais.
+O sistema de recomendação desenvolvido para a Quantum Finance representa uma aplicação prática dos conceitos de filtro colaborativo no contexto do Open Finance brasileiro. A base expandida de 25 clientes com perfis diversificados valida a eficácia do algoritmo em diferentes cenários, desde clientes minimalistas até premium. A integração de dados internos e externos possibilita recomendações mais assertivas, contribuindo para o crescimento sustentável da fintech através de uma abordagem centrada no cliente e baseada em evidências comportamentais.

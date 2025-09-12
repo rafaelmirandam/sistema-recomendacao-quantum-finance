@@ -1,36 +1,35 @@
 """
-Sistema de Recomendação Quantum Finance - Prova de Conceito (PoC)
+Sistema de Recomendação Quantum Finance
 Disciplina: Sistemas de Recomendação - FIAP
 Professor: José Luiz Maturana Pagnossim
+Autores: Rafael de Miranda / Wilson Roberto de Melo
 Data: Setembro 2025
 
-Este código representa uma prova de conceito simplificada de um sistema de recomendação
-para a fintech Quantum Finance. NÃO se trata de um sistema de produção, mas sim de uma
-demonstração educacional dos conceitos de filtro colaborativo.
+Sistema de recomendação para produtos financeiros utilizando algoritmo 
+de filtro colaborativo baseado em similaridade entre clientes.
 """
 
 import math
 from typing import Dict, List, Tuple
 
-# 1. DATASET SIMULADO
-# Base de dados simulada representando clientes da Quantum Finance e seus produtos contratados
-# Produtos: Conta Corrente (CC), Cartão de Crédito (CartaoCredito), Investimentos (Investimento),
-# Seguro (Seguro), Empréstimo (Emprestimo), Financiamento (Financiamento)
+# BASE DE DADOS DOS CLIENTES
+# Clientes da Quantum Finance e seus produtos contratados
+# Produtos: CC, CartaoCredito, Investimento, Seguro, Emprestimo, Financiamento
 
 clientes_produtos = {
     "Ana": {
-        "CC": 1,                # Possui conta corrente
-        "CartaoCredito": 0,     # Não possui cartão de crédito
-        "Investimento": 1,      # Possui investimentos
-        "Seguro": 0,           # Não possui seguro
-        "Emprestimo": 0,       # Não possui empréstimo
-        "Financiamento": 0     # Não possui financiamento
+        "CC": 1,
+        "CartaoCredito": 0,
+        "Investimento": 1,
+        "Seguro": 0,
+        "Emprestimo": 0,
+        "Financiamento": 0
     },
     "Bruno": {
         "CC": 1,
-        "CartaoCredito": 1,     # Possui cartão de crédito
+        "CartaoCredito": 1,
         "Investimento": 1,
-        "Seguro": 1,           # Possui seguro
+        "Seguro": 1,
         "Emprestimo": 0,
         "Financiamento": 0
     },
@@ -39,7 +38,7 @@ clientes_produtos = {
         "CartaoCredito": 1,
         "Investimento": 0,
         "Seguro": 0,
-        "Emprestimo": 1,       # Possui empréstimo
+        "Emprestimo": 1,
         "Financiamento": 0
     },
     "Diana": {
@@ -48,7 +47,7 @@ clientes_produtos = {
         "Investimento": 1,
         "Seguro": 1,
         "Emprestimo": 0,
-        "Financiamento": 1     # Possui financiamento
+        "Financiamento": 1
     },
     "Eduardo": {
         "CC": 1,
@@ -72,7 +71,7 @@ clientes_produtos = {
         "Investimento": 0,
         "Seguro": 0,
         "Emprestimo": 0,
-        "Financiamento": 1     # Cliente novo, só possui CC e Financiamento
+        "Financiamento": 1
     },
     "Helena": {
         "CC": 1,
@@ -80,7 +79,7 @@ clientes_produtos = {
         "Investimento": 1,
         "Seguro": 1,
         "Emprestimo": 1,
-        "Financiamento": 1     # Cliente premium com todos os produtos
+        "Financiamento": 1
     },
     "Igor": {
         "CC": 1,
@@ -88,7 +87,7 @@ clientes_produtos = {
         "Investimento": 1,
         "Seguro": 0,
         "Emprestimo": 0,
-        "Financiamento": 0     # Perfil conservador, similar à Ana
+        "Financiamento": 0
     },
     "Julia": {
         "CC": 1,
@@ -96,7 +95,7 @@ clientes_produtos = {
         "Investimento": 0,
         "Seguro": 1,
         "Emprestimo": 0,
-        "Financiamento": 0     # Perfil proteção sem investimentos
+        "Financiamento": 0
     },
     "Kevin": {
         "CC": 1,
@@ -104,7 +103,7 @@ clientes_produtos = {
         "Investimento": 0,
         "Seguro": 0,
         "Emprestimo": 1,
-        "Financiamento": 1     # Perfil endividado
+        "Financiamento": 1
     },
     "Laura": {
         "CC": 1,
@@ -355,7 +354,7 @@ def recomendar_produto(usuario_alvo: str, base_clientes: Dict[str, Dict[str, int
     print(f"\n🔍 ANALISANDO USUÁRIOS SIMILARES:")
     usuarios_similares = encontrar_usuarios_similares(usuario_alvo, base_clientes)
     
-    # Exibe os 3 usuários mais similares para demonstração
+    # Exibe os 3 usuários mais similares
     print("   Top 3 usuários mais similares:")
     for i, (cliente, distancia) in enumerate(usuarios_similares[:3]):
         similaridade_percentual = max(0, (1 - distancia/10) * 100)  # Conversão para percentual
@@ -451,15 +450,15 @@ def exibir_recomendacao_detalhada(resultado_recomendacao: Dict):
             nome_produto = produtos_info.get(produto, {}).get('nome', produto)
             print(f"   • {nome_produto}")
 
-# EXEMPLO DE EXECUÇÃO E DEMONSTRAÇÃO
+# EXECUÇÃO DO SISTEMA
 if __name__ == "__main__":
     """
-    Seção de demonstração do sistema de recomendação.
-    Aqui executamos exemplos práticos para mostrar como o sistema funciona.
+    Execução principal do sistema de recomendação.
+    Análise completa da base de clientes e geração de recomendações.
     """
     
-    print("🚀 INICIANDO DEMONSTRAÇÃO DO SISTEMA DE RECOMENDAÇÃO QUANTUM FINANCE")
-    print("Este é um sistema educacional - NÃO é um sistema de produção")
+    print("SISTEMA DE RECOMENDAÇÃO QUANTUM FINANCE")
+    print("Desenvolvido para análise de produtos financeiros")
     
     # Exemplo 1: Recomendação para Ana
     print("\n" + "="*80)
@@ -578,16 +577,16 @@ if __name__ == "__main__":
         nome_produto = produtos_info.get(produto, {}).get('nome', produto)
         print(f"   {nome_produto}: {potencial} clientes potenciais")
     
-    print(f"\n✅ DEMONSTRAÇÃO CONCLUÍDA!")
-    print("Este sistema demonstra os conceitos básicos de filtro colaborativo com base expandida.")
-    print("A base agora possui 25 clientes com perfis diversos, permitindo:")
-    print("• Melhor demonstração de similaridades entre usuários")
-    print("• Casos variados de recomendação (minimalista, premium, específicos)")
-    print("• Análise mais robusta de padrões de consumo")
-    print("• Identificação de oportunidades de cross-sell")
+    print(f"\n✅ EXECUÇÃO CONCLUÍDA!")
+    print("Sistema analisou base de 25 clientes com sucesso.")
+    print("A base diversificada permite:")
+    print("• Identificação precisa de similaridades entre usuários")
+    print("• Recomendações personalizadas para diferentes perfis")
+    print("• Análise robusta de padrões de consumo")
+    print("• Mapeamento de oportunidades de cross-sell")
     print("")
-    print("Em um ambiente de produção, seria necessário implementar:")
-    print("• Algoritmos mais sofisticados (matrix factorization, deep learning)")
+    print("Melhorias para ambiente corporativo:")
+    print("• Implementação de algoritmos avançados (matrix factorization, deep learning)")
     print("• Tratamento de dados em larga escala")
     print("• Avaliação de qualidade das recomendações")
     print("• Integração com sistemas de produção")
