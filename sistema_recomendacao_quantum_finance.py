@@ -1,7 +1,5 @@
 """
 Sistema de Recomendação Quantum Finance
-Disciplina: Sistemas de Recomendação - FIAP
-Professor: José Luiz Maturana Pagnossim
 Autores: Rafael de Miranda / Wilson Roberto de Melo
 Data: Setembro 2025
 
@@ -343,15 +341,15 @@ def recomendar_produto(usuario_alvo: str, base_clientes: Dict[str, Dict[str, int
     
     # 1. Exibe o perfil atual do usuário alvo
     perfil_alvo = base_clientes[usuario_alvo]
-    print(f"\n📊 PERFIL ATUAL DE {usuario_alvo.upper()}:")
+    print(f"\nPERFIL ATUAL DE {usuario_alvo.upper()}:")
     produtos_possui = [produto for produto, tem in perfil_alvo.items() if tem == 1]
     produtos_nao_possui = [produto for produto, tem in perfil_alvo.items() if tem == 0]
     
-    print(f"   ✅ Produtos que possui: {', '.join(produtos_possui)}")
-    print(f"   ❌ Produtos que não possui: {', '.join(produtos_nao_possui)}")
+    print(f"   Produtos que possui: {', '.join(produtos_possui)}")
+    print(f"   Produtos que não possui: {', '.join(produtos_nao_possui)}")
     
     # 2. Encontra usuários similares
-    print(f"\n🔍 ANALISANDO USUÁRIOS SIMILARES:")
+    print(f"\nANALISANDO USUÁRIOS SIMILARES:")
     usuarios_similares = encontrar_usuarios_similares(usuario_alvo, base_clientes)
     
     # Exibe os 3 usuários mais similares
@@ -421,7 +419,7 @@ def exibir_recomendacao_detalhada(resultado_recomendacao: Dict):
     """
     
     if not resultado_recomendacao["sucesso"]:
-        print(f"\n❌ {resultado_recomendacao['erro']}")
+        print(f"\n{resultado_recomendacao['erro']}")
         return
     
     print(f"\n{'='*60}")

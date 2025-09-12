@@ -1,8 +1,7 @@
-# Proposta de Trabalho Final - Sistemas de Recomendação
+# Proposta Técnica - Sistema de Recomendação Quantum Finance
 ## Sistema de Recomendação para Fintech Quantum Finance
 
-**Disciplina:** Sistemas de Recomendação  
-**Professor:** José Luiz Maturana Pagnossim  
+**Projeto:** Sistema de Recomendação Quantum Finance  
 **Autores:** Rafael de Miranda / Wilson Roberto de Melo  
 **Data:** Setembro 2025
 
@@ -264,4 +263,4 @@ Durante o desenvolvimento, foram implementadas as seguintes melhorias:
 - **Identificação de Oportunidades:** Análise automática de cross-sell
 
 ### 5.6 Conclusão
-O sistema de recomendação desenvolvido para a Quantum Finance representa uma aplicação prática dos conceitos de filtro colaborativo no contexto do Open Finance brasileiro. A base expandida de 25 clientes com perfis diversificados valida a eficácia do algoritmo em diferentes cenários, desde clientes minimalistas até premium. A integração de dados internos e externos possibilita recomendações mais assertivas, contribuindo para o crescimento sustentável da fintech através de uma abordagem centrada no cliente e baseada em evidências comportamentais.
+O sistema de recomendação desenvolvido para a Quantum Finance representa uma aplicação prática de algoritmos de filtro colaborativo no contexto do Open Finance brasileiro. A base expandida de 25 clientes com perfis diversificados valida a eficácia do algoritmo em diferentes cenários, desde clientes minimalistas até premium. A integração de dados internos e externos possibilita recomendações mais assertivas, contribuindo para o crescimento sustentável da fintech através de uma abordagem centrada no cliente e baseada em evidências comportamentais.

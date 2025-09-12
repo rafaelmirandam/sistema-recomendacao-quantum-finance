@@ -1,8 +1,6 @@
 # Sistema de Recomendação Quantum Finance
 
-> **Trabalho Final - Disciplina: Sistemas de Recomendação**  
-> **FIAP - Pós-graduação**  
-> **Professor:** José Luiz Maturana Pagnossim  
+> **Sistema de Recomendação para Produtos Fintech**  
 > **Autores:** Rafael de Miranda / Wilson Roberto de Melo  
 > **Data:** Setembro 2025
 
@@ -18,7 +16,7 @@ A Quantum Finance é uma fintech que utiliza dados do Open Finance para oferecer
 
 ```
 trabalho/
-├── proposta_trabalho_final.md      # Documentação completa do projeto
+├── documentacao_tecnica.md         # Documentação completa do projeto
 ├── sistema_recomendacao_quantum_finance.py  # Implementação do sistema
 └── README.md                       # Documentação do projeto
 ```
@@ -120,8 +118,8 @@ Para implementação em ambiente corporativo seria necessário:
 
 ## 📚 Documentação Completa
 
-Para detalhes completos sobre contextualização, arquitetura, protótipo e implementação, consulte o arquivo `proposta_trabalho_final.md`.
+Para detalhes completos sobre contextualização, arquitetura, protótipo e implementação, consulte o arquivo `documentacao_tecnica.md`.
 
 ---
 
-**Nota:** Este projeto foi desenvolvido como trabalho final da disciplina "Sistemas de Recomendação" da FIAP, aplicando conceitos teóricos em um cenário prático do mercado financeiro brasileiro.
+**Nota:** Sistema desenvolvido para análise e recomendação de produtos financeiros, aplicando técnicas de machine learning no contexto do Open Finance brasileiro.
